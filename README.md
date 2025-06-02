@@ -1,0 +1,9 @@
+# Dotfiles
+## Setup
+`git clone --bare git@github.com:Lexicoo123dd/dotfiles.git $HOME/.dotfiles`
+
+`alias gitdf='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'`
+
+`gitdf config --local status.showUntrackedFiles no`
+
+`gitdf checkout` or `gitdf checkout -f` to overwrite
