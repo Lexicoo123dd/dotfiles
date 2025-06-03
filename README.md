@@ -1,5 +1,7 @@
 # Dotfiles
 ## Setup
+`sudo pacman -S git openssh base-devel`
+
 `git clone --bare git@github.com:Lexicoo123dd/dotfiles.git $HOME/.dotfiles`
 
 `alias gitdf='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'`
