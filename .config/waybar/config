@@ -13,6 +13,7 @@
         ],
         "modules-right": [
             "group/expand",
+            "custom/input",
             "pulseaudio",
             "bluetooth",
             "network",
@@ -158,6 +159,13 @@
                 "default": ["", "", ""]
             },
             "on-click": "pavucontrol"
+        },
+        "custom/input": {
+            "exec": "~/.config/waybar/scripts/input-lang.sh",
+            "interval": "once",
+            "signal": 8,
+            "format": "{}  ",
+            "on-click": "fcitx5-configtool"
         },
 } 
 
