@@ -22,6 +22,8 @@ man-db
 git
 fzf
 ffmpeg
+wireguard-tools
+openresolv
 docker
 docker-compose
 noto-fonts
