@@ -8,7 +8,7 @@ yays:
 	cd .. && \
 	rm -rf yay
 	yay
-	sudo pacman -S --needed - < ./pacs
+	yay -S --needed - < ./yays
 rust:
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 sddm:
