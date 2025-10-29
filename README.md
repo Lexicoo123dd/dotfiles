@@ -35,3 +35,17 @@ sudo systemctl enable --now systemd-timesyncd
 sudo reflector --country Sweden --latest 5 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 ```
 
+### Adding User
+Add a new user and give them a password with
+```
+useradd -m -G wheel,storage,power <name>
+passwd <name>
+```
+Edit sudo permissions with `EDITOR=nano visudo` and uncomment
+```
+%wheel ALL=(ALL:ALL) ALL
+```
+and add the follow line below that:
+```
+Defaults rootpw
+```
