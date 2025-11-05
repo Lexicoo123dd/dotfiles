@@ -18,5 +18,9 @@ return {
             vim.opt.termguicolors = true
             require("bufferline").setup{}
         end
-    }
+    },
+    {
+        "karb94/neoscroll.nvim",
+        opts = { cursor_scrolls_alone = false },
+    },
 }
