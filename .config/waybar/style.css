@@ -2,9 +2,9 @@
 /* https://github.com/Alexays/Waybar/wiki */
 @import "mocha.css";
 
-label {
+* {
     /* font-family: "MesloLGS Nerd Font Mono Bold"; */
-    font-family: "Monocraft", "monospace";
+    font-family: "Monocraft", "Monospace";
     font-size: 14px;
     font-weight: bold;
 }
