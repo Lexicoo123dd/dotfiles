@@ -10,12 +10,20 @@
 }
 
 window#waybar {
-    background: transparent;
-    background-color: alpha(@crust, 0.9);
-    color: @overlay0;
-    transition-property: background-color;
-    transition-duration: 0.1s;
-    border-bottom: 1px solid @overlay1;
+    min-height: 46px;
+    padding: 0;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-image-source: url("assets/plank.png");
+    border-image-slice: 0 2 0 2;
+    border-image-width: 0 2 0 2;
+    border-image-repeat: stretch;
+    background-color: transparent;
+
+    background-image: url("assets/plank-middle.png");
+    background-repeat: repeat-x;
+    background-size: auto;
+    background-position: 2px 0;
 }
 
 #window {
