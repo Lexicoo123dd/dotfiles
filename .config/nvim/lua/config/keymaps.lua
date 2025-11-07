@@ -6,3 +6,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "moves lines up in visual 
 vim.keymap.set("n", "<leader><space>", ":nohlsearch<Cr>", { desc = "Clear search highlight" })
 vim.keymap.set("n", "H", ":BufferLineCyclePrev<CR>", { desc = "Go to previous buffer" })
 vim.keymap.set("n", "L", ":BufferLineCycleNext<CR>", { desc = "Go to next buffer" })
+
+-- Keep visual selection after indenting
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
