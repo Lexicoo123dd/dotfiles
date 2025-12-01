@@ -20,4 +20,8 @@ return {
         "karb94/neoscroll.nvim",
         opts = { cursor_scrolls_alone = false },
     },
+    {
+        "godlygeek/tabular",
+        cmd = { "Tabularize" },
+    },
 }

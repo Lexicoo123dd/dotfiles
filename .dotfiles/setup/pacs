@@ -43,6 +43,7 @@ swaync
 swww
 kitty
 dolphin
+konsole
 hyprpicker
 starship
 fastfetch
@@ -53,6 +54,7 @@ fcitx5-mozc
 firefox
 neovim
 vlc
+vlc-plugins-all
 steam
 sl
 mpd
