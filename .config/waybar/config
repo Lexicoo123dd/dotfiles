@@ -68,23 +68,26 @@
             "interval": "once",
             "signal": 8,
             "format": "{}  ",
-            "on-click": "fcitx5-configtool"
+            "on-click": "fcitx5-configtool",
+            "on-click-right": "fcitx5-remote -t; pkill -SIGRTMIN+8 waybar",
     },
     "pulseaudio#output": {
         "format": "{icon}  {volume}%",
-        "format-muted": "",
+        "format-muted": "   {volume}%",
         "format-icons": {
             "default": ["", "", " "]
         },
         "on-click": "pavucontrol",
-        "on-click-middle": "pavucontrol"
+        "on-click-middle": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     },
     "pulseaudio#input": {
         "format": "{format_source}",
         "format-source": "  {volume}%",
-        "format-source-muted": "  {volume}%",
-        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "format-source-muted": "   {volume}%",
+        "on-click": "pavucontrol",
         "on-click-middle": "pavucontrol",
+        "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
         "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
         "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%"
     },
@@ -101,9 +104,9 @@
         "tooltip-format-connected": "{num_connections} connected\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}",
         "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_battery_percentage}%",
+        "on-click": "kitty bluetui",
         // Toggle bluetooth
-        "on-click": "bluetoothctl show | grep 'Powered:' | grep -q 'yes' && bluetoothctl power off || bluetoothctl power on",
-        "on-click-right": "blueman-manager"
+        "on-click-right": "bluetoothctl show | grep 'Powered:' | grep -q 'yes' && bluetoothctl power off || bluetoothctl power on",
     }, 
     "network": {
         "format-wifi": "{icon}  {essid}",
@@ -114,7 +117,8 @@
         "tooltip-format-wifi": "Signal strength: {signalStrength}%",
         "tooltip-format-ethernet": "{ifname} 🖧 ",
         "interval": 10,
-        "on-click": "kitty nmtui"
+        "on-click": "kitty nmtui",
+        "on-click-right": "kitty nmtui",
     },
     "battery": {
         "states": {
