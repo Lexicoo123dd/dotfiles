@@ -15,6 +15,7 @@ return {
                 "lua",
                 "bash",
                 "c",
+                "cpp",
                 "clojure",
                 "cmake",
                 "css",
