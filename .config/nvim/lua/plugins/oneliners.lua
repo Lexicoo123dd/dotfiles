@@ -8,14 +8,6 @@ return {
             require('nvim-highlight-colors').setup({})
         end
     },
-    { -- Tabs (or rather buffers)
-        'akinsho/bufferline.nvim', version = "*",
-        dependencies = 'nvim-tree/nvim-web-devicons',
-        config = function ()
-            vim.opt.termguicolors = true
-            require("bufferline").setup{}
-        end
-    },
     {
         "karb94/neoscroll.nvim",
         opts = { cursor_scrolls_alone = false },
