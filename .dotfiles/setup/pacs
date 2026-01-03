@@ -39,6 +39,7 @@ wayland
 uwsm
 hyprland
 hyprpaper
+hyprlock
 python-pywal
 waybar
 wofi
@@ -52,6 +53,7 @@ starship
 fastfetch
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
+qt6ct
 fcitx5-im
 fcitx5-mozc
 firefox

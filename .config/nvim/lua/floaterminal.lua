@@ -17,6 +17,9 @@ local function create_floating_window(opts)
         buf = opts.buf
     else
         buf = vim.api.nvim_create_buf(false, true)
+        -- keep terminal buffer from appearing in bufferline
+        vim.bo[buf].buflisted = false
+        vim.bo[buf].bufhidden = "hide"
     end
 
     local win_config = {
@@ -43,6 +46,9 @@ local floaterm_open = function()
 
     if vim.bo[state.floating.buf].buftype ~= "terminal" then
         vim.cmd("terminal")
+        -- ensure terminal buffer stays unlisted
+        vim.bo[state.floating.buf].buflisted = false
+        vim.bo[state.floating.buf].bufhidden = "hide"
     end
     vim.cmd("startinsert")
 end
