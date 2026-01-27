@@ -19,6 +19,7 @@ return {
                 "clojure",
                 "cmake",
                 "css",
+                "haskell",
                 "make",
                 "markdown",
                 "ocaml",
