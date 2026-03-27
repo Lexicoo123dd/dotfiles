@@ -17,6 +17,7 @@ pavucontrol
 bluez
 bluez-utils
 bluez-deprecated-tools
+bluetui
 unzip
 imagemagick
 make
@@ -60,6 +61,7 @@ firefox
 neovim
 vlc
 vlc-plugins-all
+mpv
 steam
 sl
 mpd

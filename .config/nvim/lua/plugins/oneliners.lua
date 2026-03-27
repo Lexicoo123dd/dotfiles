@@ -16,4 +16,8 @@ return {
         "godlygeek/tabular",
         cmd = { "Tabularize" },
     },
+    {
+        'nvim-mini/mini.bufremove',
+        version = false,
+    },
 }

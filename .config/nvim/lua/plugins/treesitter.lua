@@ -1,3 +1,4 @@
+-- https://github.com/nvim-treesitter/nvim-treesitter/blob/main/SUPPORTED_LANGUAGES.md
 return {
     "nvim-treesitter/nvim-treesitter",
     branch = 'master',

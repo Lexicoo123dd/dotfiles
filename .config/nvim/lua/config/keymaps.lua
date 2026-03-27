@@ -12,7 +12,7 @@ vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
 -- Buffers
-vim.keymap.set("n", "<leader>bd", ":bd<CR>", { desc = "Close current buffer" })
+vim.keymap.set("n", "<leader>bd", function() require("mini.bufremove").delete(0, false) end, { desc = "Close current buffer (keep window)" })
 vim.keymap.set("n", "<A-h>", ":BufferLineMovePrev<CR>", { desc = "Move current buffer to the left" })
 vim.keymap.set("n", "<A-l>", ":BufferLineMoveNext<CR>", { desc = "Move current buffer to the right" })
 
@@ -23,3 +23,16 @@ vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "<leader>wv", ":vsplit<CR>", { desc = "Split window vertically" })
 vim.keymap.set("n", "<leader>wh", ":split<CR>", { desc = "Split window horizontally" })
+
+-- Yank changes
+-- Make change not yank
+vim.keymap.set({ "n", "v" }, "c", '"_c')
+vim.keymap.set("n", "C", '"_C')
+-- Make substitute not yank
+vim.keymap.set({ "n", "v" }, "s", '"_s')
+vim.keymap.set("n", "S", '"_S')
+-- Make visual paste not yank
+vim.keymap.set("x", "p", '"_dP')
+-- Make x (delete character) not yank
+vim.keymap.set("n", "x", '"_x')
+vim.keymap.set("n", "X", '"_X')
