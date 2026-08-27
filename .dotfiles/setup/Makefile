@@ -1,5 +1,7 @@
 pacs:
 	sudo pacman -S --needed - < ./pacs
+pacs_laptop:
+	sudo pacman -S --needed - < ./pacs_laptop
 yays:
 	sudo pacman -S --needed git base-devel && \
 	git clone https://aur.archlinux.org/yay.git && \
