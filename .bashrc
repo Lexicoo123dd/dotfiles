@@ -18,3 +18,5 @@ export PATH="$PATH:/home/all/.local/bin"
 . "$HOME/.cargo/env"
 
 [ -f "/home/all/.ghcup/env" ] && . "/home/all/.ghcup/env" # ghcup-env
+
+. "$HOME/.local/share/../bin/env"

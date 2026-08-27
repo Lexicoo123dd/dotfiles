@@ -22,3 +22,5 @@ export INPUT_METHOD=fcitx
 # This section can be safely removed at any time if needed.
 test -r '/home/all/.opam/opam-init/init.sh' && . '/home/all/.opam/opam-init/init.sh' > /dev/null 2> /dev/null || true
 # END opam configuration
+
+. "$HOME/.local/share/../bin/env"
