@@ -1,0 +1,40 @@
+# To print file metadata:
+ffmpeg -i <file>
+
+# To convert video from .foo to .bar
+# -g : GOP, for searchability
+ffmpeg -i input.foo -vcodec bar -acodec baz -b:v 21000k -b:a 320k -g 150 -threads 4 output.bar
+
+# To combine video and audio into one file
+ffmpeg -i video.ext -i audio.ext -c:v copy -c:a copy output.ext
+
+# To add ass subtitle to the video
+ffmpeg -i input_video.mp4 -vf ass=sub.ass output_video_subtitles.mp4
+
+# To convert with subtitles:
+ffmpeg -i input.mkv -vf subtitles=input.mkv output.mp4
+
+# To convert webm to mp4
+ffmpeg -i input_video.webm output_video.mp4
+
+# To convert mp4 to mov
+ffmpeg -i input_video.mp4 -acodec copy -vcodec copy -f mov output_video.mov
+
+# To convert mov to mp4
+ffmpeg -i input_video.mov -vcodec copy -acodec copy output_video.mp4
+
+# Listen to 10 seconds of audio from a video file
+#
+# -ss : start time
+# -t  : seconds to cut
+# -autoexit : closes ffplay as soon as the audio finishes
+ffmpeg -ss 00:34:24.85 -t 10 -i path/to/file.mp4 -f mp3 pipe:play | ffplay -i pipe:play -autoexit
+
+# To combine audio and video from N files:
+# See also https://stackoverflow.com/questions/7333232/how-to-concatenate-two-mp4-files-using-ffmpeg
+cat mylist.txt
+file '/path/to/file1'
+file '/path/to/file2'
+file '/path/to/file3'
+    
+ffmpeg -f concat -safe 0 -i mylist.txt -c copy output.mp4

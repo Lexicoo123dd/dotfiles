@@ -1,0 +1,9 @@
+## Steam Launch Options
+
+# Sons of the Forest
+Launch with mods:
+WINEDLLOVERRIDES="version=n,b" %command%
+
+# Fear & Hunger
+Enable steam overlay:
+--in-process-gpu
