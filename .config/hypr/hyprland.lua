@@ -75,6 +75,7 @@ hl.on("hyprland.start", function ()
   -- hl.exec_cmd(terminal)
   hl.exec_cmd("waybar & hyprpaper")
   hl.exec_cmd("fcitx5")
+  hl.exec_cmd("hypridle")
 end)
 
 
@@ -289,6 +290,7 @@ local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 -- hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("hyprshutdown -t 'Restarting...' --post-cmd 'reboot'"))
 hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'"))
+hl.bind(mainMod .. " + SHIFT + comma", hl.dsp.exec_cmd("systemctl suspend"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
@@ -433,3 +435,6 @@ hl.window_rule({
     rounding = 0,
     no_anim = true,
 })
+
+-- Laptop only (lappe-barbor)
+require("lappe-barbor")
