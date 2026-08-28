@@ -34,6 +34,20 @@ hl.monitor({
     scale    = "auto",
 })
 
+-- DP-1 Workspaces
+hl.workspace_rule({ workspace = "1", monitor = "DP-1", default=true})
+hl.workspace_rule({ workspace = "2", monitor = "DP-1"})
+hl.workspace_rule({ workspace = "3", monitor = "DP-1"})
+hl.workspace_rule({ workspace = "4", monitor = "DP-1"})
+hl.workspace_rule({ workspace = "5", monitor = "DP-1"})
+
+-- HDMI-A-1 Workspaces
+hl.workspace_rule({ workspace = "6", monitor = "HDMI-A-1", default=true})
+hl.workspace_rule({ workspace = "7", monitor = "HDMI-A-1"})
+hl.workspace_rule({ workspace = "8", monitor = "HDMI-A-1"})
+hl.workspace_rule({ workspace = "9", monitor = "HDMI-A-1"})
+hl.workspace_rule({ workspace = "10", monitor = "HDMI-A-1"})
+
 
 ---------------------
 ---- MY PROGRAMS ----
@@ -44,6 +58,8 @@ local terminal    = "kitty"
 local fileManager = "dolphin"
 local menu        = "wofi"
 local browser     = "firefox"
+local calc        = "wofi-calc"
+local discord     = "legcord"
 
 
 -------------------
@@ -270,10 +286,13 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+-- hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("hyprshutdown -t 'Restarting...' --post-cmd 'reboot'"))
+hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + X", hl.dsp.exec_cmd(calc))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + O", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind("CTRL + ALT + DELETE", hl.dsp.exec_cmd("hyprlock"))
@@ -281,6 +300,11 @@ hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("slurp | grim -g - - | wl-copy"))
 hl.bind(mainMod .. "+ SHIFT + S", hl.dsp.exec_cmd([[wayfreeze --hide-cursor --after-freeze-cmd 'grim -g "$(slurp)" - | wl-copy; killall wayfreeze']]))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("fcitx5-remote -t; pkill -SIGRTMIN+8 waybar"))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
+hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd(browser .. " --private-window"))
+hl.bind(mainMod .. " + D", hl.dsp.focus({ window = "class:^(" .. discord .. ")$" }))
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(discord))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("rofimoji -a copy -f emojis"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd([[rofimoji -a copy -f math kaomoji -r '¯\_(ツ)_/¯']]))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
@@ -300,13 +324,19 @@ for i = 1, 10 do
     hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
 end
 
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.workspace.move({ workspace = "e+0", monitor = "+1" }))
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.focus({ workspace = "e+0" }))
+
 -- Example special workspace (scratchpad)
 -- hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
 -- hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod .. " + mouse_down",   hl.dsp.focus({ workspace = "e-1" }))
+-- "Scroll" through existing workspaces with mainMod + ,/.
+hl.bind(mainMod .. " + period", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod .. " + comma",   hl.dsp.focus({ workspace = "e-1" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
