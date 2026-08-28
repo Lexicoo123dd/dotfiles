@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Service
+MimeType=application/octet-stream;
+Actions=sendViaLocalSend;
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin
+
+[Desktop Action sendViaLocalSend]
+Name=Send via LocalSend
+Exec=localsend --send %F
+Icon=localsend

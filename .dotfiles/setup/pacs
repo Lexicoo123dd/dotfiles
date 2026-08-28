@@ -3,6 +3,7 @@ efibootmgr
 openssh
 python3
 jdk-openjdk
+rustup
 nano
 wget
 wl-clipboard
@@ -71,3 +72,4 @@ sl
 mpd
 mpc
 rmpc
+libayatana-indicator
