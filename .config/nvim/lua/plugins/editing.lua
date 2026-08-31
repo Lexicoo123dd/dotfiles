@@ -3,7 +3,9 @@ return {
         'windwp/nvim-autopairs',
         event = "InsertEnter",
         config = true,
-        opts = {}
+        opts = {
+            enable_check_bracket_line = false,
+        },
     },
     {
         'machakann/vim-sandwich',

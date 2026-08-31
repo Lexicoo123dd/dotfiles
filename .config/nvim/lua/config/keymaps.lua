@@ -1,11 +1,24 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<leader>cd", vim.cmd.Ex)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Moves lines down in visual selection" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Moves lines up in visual selection" })
 vim.keymap.set("n", "<leader><space>", ":nohlsearch<Cr>", { desc = "Clear search highlight" })
 vim.keymap.set("n", "H", ":BufferLineCyclePrev<CR>", { desc = "Go to previous buffer" })
 vim.keymap.set("n", "L", ":BufferLineCycleNext<CR>", { desc = "Go to next buffer" })
+
+-- Oil (file explorer) keymaps
+vim.keymap.set("n", "<leader>cd", "<cmd>Oil<CR>", { desc = "Open file explorer" })
+vim.keymap.set("n", "<leader>cD", function()
+    local buffers = vim.tbl_filter(function(buf)
+        return vim.bo[buf].buflisted
+    end, vim.api.nvim_list_bufs())
+    if #buffers > 1 then
+        vim.cmd("bd")
+        vim.cmd("Oil")
+    else
+        vim.cmd("Oil")
+    end
+end, { desc = "Close buffer and open file explorer" })
 
 -- Keep visual selection after indenting
 vim.keymap.set("v", "<", "<gv")
