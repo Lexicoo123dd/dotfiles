@@ -279,8 +279,8 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd(browser .. " --private-window"))
 hl.bind(mainMod .. " + D", hl.dsp.focus({ window = "class:^(" .. discord .. ")$" }))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(discord))
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("rofimoji -a copy -f emojis"))
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd([[rofimoji -a copy -f math kaomoji -r '¯\_(ツ)_/¯']]))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd([[rofimoji -a copy -f emojis]]))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd([[rofimoji -a copy -f math kaomoji ~/.config/rofimoji/my_kaomoji.csv -r '¯\_(ツ)_/¯']]))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
