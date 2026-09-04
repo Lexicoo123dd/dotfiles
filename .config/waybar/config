@@ -72,8 +72,8 @@
             "on-click-right": "fcitx5-remote -t; pkill -SIGRTMIN+8 waybar",
     },
     "pulseaudio#output": {
-        "format": "{icon}  {volume}%",
-        "format-muted": "   {volume}%",
+        "format": "{icon} {volume}%",
+        "format-muted": "  {volume}%",
         "format-icons": {
             "default": ["", "", " "]
         },
@@ -83,8 +83,8 @@
     },
     "pulseaudio#input": {
         "format": "{format_source}",
-        "format-source": "  {volume}%",
-        "format-source-muted": "   {volume}%",
+        "format-source": " {volume}%",
+        "format-source-muted": "  {volume}%",
         "on-click": "pavucontrol",
         "on-click-middle": "pavucontrol",
         "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
@@ -98,7 +98,7 @@
         "format-on": "󰂯",
         "format-off": "󰂲",
         "format-disabled": "󰂲",
-        "format-connected-battery": "󰂯  {device_alias}",
+        "format-connected-battery": "󰂯 {device_alias}",
         "format-no-controller": "",
         "tooltip-format": "{num_connections} connected",
         "tooltip-format-connected": "{num_connections} connected\n{device_enumerate}",
@@ -109,8 +109,8 @@
         "on-click-right": "bluetoothctl show | grep 'Powered:' | grep -q 'yes' && bluetoothctl power off || bluetoothctl power on",
     }, 
     "network": {
-        "format-wifi": "{icon}  {essid}",
-        "format-linked": "{icon}  {essid}",
+        "format-wifi": "{icon} {essid}",
+        "format-linked": "{icon} {essid}",
         "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
         "format-ethernet": "<span size='13000' foreground='#f5e0dc'>🖧</span>",
         "format-disconnected": "<span size='13000' foreground='#f5e0dc'>󰤭  </span>Disconnected",
@@ -136,7 +136,7 @@
         "interval": 1
     },
     "clock": {
-        "format": "<span foreground='#f5c2e7'>   </span>{:%a %b %d %T}",
+        "format": "<span foreground='#f5c2e7'>  </span>{:%a %b %d %T}",
         "tooltip-format": "<tt>{calendar}</tt>",
         "interval": 1,
         "calendar": {

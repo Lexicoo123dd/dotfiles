@@ -1,0 +1,5 @@
+# Set wallpaper and and corresponding colourscheme
+pywal -i path/to/image.jpg
+
+# Set colourscheme of wallpaper, without changing the wallpaper
+pywal -i path/to/image.jpg -n
