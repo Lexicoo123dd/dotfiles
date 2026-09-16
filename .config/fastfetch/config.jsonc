@@ -1,0 +1,38 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+      "type": "command-raw",
+      "source": "ascii-image-converter ~/.config/fastfetch/akari_shrug.webp -C -b --threshold 0 -W 40"
+  },
+  "modules": [
+    "title",
+    "separator",
+    "os",
+    "host",
+    "kernel",
+    "uptime",
+    "packages",
+    "shell",
+    "display",
+    "de",
+    "wm",
+    "wmtheme",
+    "theme",
+    "icons",
+    "font",
+    "cursor",
+    "terminal",
+    "terminalfont",
+    "cpu",
+    "gpu",
+    "memory",
+    "swap",
+    "disk",
+    "battery",
+    "poweradapter",
+    "localip",
+    "locale",
+    "break",
+    "colors"
+  ]
+}
