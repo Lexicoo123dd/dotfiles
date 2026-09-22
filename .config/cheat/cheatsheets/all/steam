@@ -1,9 +1,13 @@
 ## Steam Launch Options
 
-# Sons of the Forest
-Launch with mods:
-WINEDLLOVERRIDES="version=n,b" %command%
+# Elden Ring
+Launch in fullscreen:
+gamescope -W 1920 -H 1080 -f -- %command%
 
 # Fear & Hunger
 Enable steam overlay:
 --in-process-gpu
+
+# Sons of the Forest
+Launch with mods:
+WINEDLLOVERRIDES="version=n,b" %command%

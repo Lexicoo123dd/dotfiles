@@ -7,6 +7,7 @@
 
 export EDITOR=nvim
 alias dc='cd ~ && cd "$(find * -type d | fzf)"'
+alias ff='fastfetch'
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
