@@ -314,10 +314,10 @@ hl.bind(mainMod .. " + mouse_down",   hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + SHIFT + mouse_up", hl.dsp.focus({ workspace = "+1" }))
 hl.bind(mainMod .. " + SHIFT + mouse_down",   hl.dsp.focus({ workspace = "-1" }))
 -- "Scroll" through existing workspaces with mainMod + Å/Ä
-hl.bind(mainMod .. " + aring", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + adiaeresis",   hl.dsp.focus({ workspace = "e-1" }))
-hl.bind(mainMod .. " + SHIFT + aring", hl.dsp.focus({ workspace = "+1" }))
-hl.bind(mainMod .. " + SHIFT + adiaeresis",   hl.dsp.focus({ workspace = "-1" }))
+hl.bind(mainMod .. " + A", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod .. " + Z",   hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mainMod .. " + SHIFT + A", hl.dsp.focus({ workspace = "+1" }))
+hl.bind(mainMod .. " + SHIFT + Z",   hl.dsp.focus({ workspace = "-1" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
@@ -392,6 +392,10 @@ hl.window_rule({
 hl.window_rule({
     match = { class = "^(legcord)$" },
     workspace = "8 silent",
+})
+hl.window_rule({
+    match = { class = "^(steam)$" },
+    workspace = "10 silent",
 })
 
 -- Dark mode
