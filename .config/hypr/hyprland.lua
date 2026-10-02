@@ -403,6 +403,13 @@ hl.window_rule({
 -- exec = gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"   -- for GTK4 apps
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct") -- for Qt apps
 
+-- Scaling
+hl.config({
+    xwayland = {
+        force_zero_scaling = true
+    }
+})
+
 -- Desktop gremlin
 hl.window_rule({
     name = "linux-gremlin",
