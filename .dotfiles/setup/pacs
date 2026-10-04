@@ -66,6 +66,8 @@ neovim
 mpv
 steam
 gamescope
+gamemode
+lib32-gamemode
 qbittorrent
 sl
 mpd

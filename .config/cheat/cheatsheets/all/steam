@@ -1,10 +1,24 @@
 ## Steam Launch Options
 
+# Any
+Launch with gamemode
+gamemoderun %command%
+
+# Baldur's Gate III
+Skip launcher:
+--skip-launcher --vulkan/--dx11
+Launch with mods:
+WINEDLLOVERRIDES="DWrite.dll=n,b" %command%
+
 # Elden Ring
 Launch in fullscreen:
-gamescope -W 1920 -H 1080 -f -- %command%
+gamescope -W 1920 -H 1080 -f --force-grab-cursor -- %command%
 
 # Fear & Hunger
+Enable steam overlay:
+--in-process-gpu
+
+# Fear & Hunger: Termina
 Enable steam overlay:
 --in-process-gpu
 
