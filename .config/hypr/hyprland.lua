@@ -86,6 +86,10 @@ hl.env("HYPRCURSOR_SIZE", "24")
 ---- LOOK AND FEEL ----
 -----------------------
 
+local colors = dofile(os.getenv("HOME") .. "/.cache/wal/colors.lua")
+local function to_rgba(hex, alpha)
+    return "rgba(" .. hex:gsub("#", "") .. alpha .. ")"
+end
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
     general = {
@@ -95,7 +99,7 @@ hl.config({
         border_size = 2,
 
         col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
+            active_border   = { colors = {to_rgba(colors.color4, "ee"), to_rgba(colors.color5, "ee")}, angle = 45 },
             inactive_border = "rgba(595959aa)",
         },
 

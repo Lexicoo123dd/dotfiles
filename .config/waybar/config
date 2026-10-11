@@ -112,7 +112,7 @@
         "format-wifi": "{icon} {essid}",
         "format-linked": "{icon} {essid}",
         "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
-        "format-ethernet": "<span size='13000' foreground='#f5e0dc'>🖧</span>",
+        "format-ethernet": "<span size='13000'>🖧</span>",
         "format-disconnected": "<span size='13000' foreground='#f5e0dc'>󰤭  </span>Disconnected",
         "tooltip-format-wifi": "Signal strength: {signalStrength}%",
         "tooltip-format-ethernet": "{ifname} 🖧 ",
@@ -136,7 +136,7 @@
         "interval": 1
     },
     "clock": {
-        "format": "<span foreground='#f5c2e7'>  </span>{:%a %b %d %T}",
+        "format": "<span>  </span>{:%a %b %d %T}",
         "tooltip-format": "<tt>{calendar}</tt>",
         "interval": 1,
         "calendar": {
